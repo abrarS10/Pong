@@ -1074,7 +1074,7 @@ MonoBehaviour:
   computerPaddle: {fileID: 788142170}
   playerScoreText: {fileID: 1860485296}
   computerScoreText: {fileID: 238268186}
-  winningScore: 3
+  winningScore: 5
   endgame: {fileID: 1976828905}
   scoreboard: {fileID: 1690575873}
   pause: {fileID: 513271584}
