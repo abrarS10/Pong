@@ -12,6 +12,13 @@ public class GameManager : MonoBehaviour
     public Text computerScoreText;
     private int playerScore;
     private int computerScore;
+    [SerializeField] int winningScore = 3;
+    [SerializeField] GameObject endgame;
+    [SerializeField] GameObject scoreboard;
+    [SerializeField] GameObject pause;
+
+    public Text title;
+
 
     public void PlayerScores(){
         playerScore++;
@@ -32,12 +39,28 @@ public class GameManager : MonoBehaviour
     }
 
     private void Update(){
-        if (playerScore == 3 || computerScore == 3){
-            resetGame();
+        if (playerScore == winningScore || computerScore == winningScore){
+            endGame();
         }
     }
 
-    private void resetGame(){
+    private void endGame(){
+        Time.timeScale = 0f;
+        pause.GetComponent<Pause>().enabled = false;
+        scoreboard.SetActive(false);
+        if(playerScore == winningScore){
+            title.text = "YOU WON!";
+        } else if (computerScore == winningScore){
+            title.text = "GAME OVER";
+        }
+        endgame.SetActive(true);
+    }
+
+    public void resetGame(){
+        endgame.SetActive(false);
+        pause.GetComponent<Pause>().enabled = true;
+        scoreboard.SetActive(true);
+        Time.timeScale = 1f;
         playerScore = 0;
         computerScore = 0;
         resetRound();

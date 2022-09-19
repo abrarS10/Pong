@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     public void LoadGame(){
+        Debug.Log("start again");
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         SceneManager.LoadScene(0);
         Time.timeScale = 1f;
