@@ -15,13 +15,11 @@ public class GameManager : MonoBehaviour
 
     public void PlayerScores(){
         playerScore++;
-        //this.playerScoreText.text = playerScore.ToString();
         this.resetRound();
     }
 
     public void ComputerScores(){
         computerScore++;
-        //this.computerScoreText.text = computerScore.ToString();
         this.resetRound();
     }
 
